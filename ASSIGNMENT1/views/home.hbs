@@ -1,2 +1,57 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+{{> nav}}
+<div class="nav-header-container">
+    <header>
+        <h1>MYLES BISS</h1>
+        <img class="img-fluid" src="images\teacup.png" alt="teacup">
+        <p>Welcome to my portfolio!!!</p>
+    </header>
+</div>
+
+<body>
+    <div class="container">
+        <div id='gummygab'>
+            <p>This is Gummygab, say hello to Gummygab!</p>
+            <img src="images\gummygab2.png" alt="gummygab">
+        </div>
+        <div class="proj-showcase">
+            <h2>Projects</h2>
+            <div class="d-inline-flex">
+                <div class="proj-card p-1 w-50">
+                    <h3><a href="https://doctorsrecruitmentsimcoe.ca/">Doctors Recruitment Website</a></h3>
+                    <p>I am working with Physicans Recruitment Alliston to make a website for them and their organization.</p>
+                    <img class="img-thumbnail" src="images\firefox_NReEJXm0Md.png" alt="Myles Biss">
+                </div>
+                <div class="proj-card p-1 w-50">
+                    <h3><a href="https://github.com/Mybiss55/StarScourge-Website">StarScourge-Website</a></h3>
+                    <p>Also a pretend website for a new video game. This is mostly based around the cool stuff I could do with CSS and I am really proud of it!</p>
+                    <img class="img-thumbnail" src="/images/firefox_v7XLE1c23K.png" alt="Star Scourge">
+                </div>
+            </div>
+        </div>
+        <div class="about-me">
+            <h3>About Me</h2>
+            <p>In general, I am a software developer who is working towards getting his Computer Science Degree.</p>
+        </div>
+        <div class="artwork d-flex flex-column">
+            <div>
+                <h2>Artwork</h2>
+                <p>Not the most plesent of art, but I made this for a bullet hell game called Forwards!</p>
+            </div>
+            <div class="d-inline-flex">
+                <div class="frame">
+                    <img class="img-fluid" src="/images/squelcher.gif" alt="squelcher"></img>
+                    <p>If you're wondering, there is a more scary version</p>
+                </div>
+                <div class="frame">
+                    <img class="img-fluid" src="images\ThumbHandEyepng.png" alt="ThumbHandEye">
+                    <p>This is my actual hand and my eye put together</p>
+                </div>
+                <div class="frame">
+                    <img class="img-fluid" src="images\FingerRun.gif" alt="FingerRun">
+                    <p>This is my finger which I rotoscoped to simulate motion</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+{{> footer}}
