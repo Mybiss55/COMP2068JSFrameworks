@@ -1,0 +1,26 @@
+<h1>{{title}}</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Ingredients</th>
+            <th>price</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each item}}
+        <tr>
+            <td>{{this.name}}</td>
+            <td>{{this.ingredients}}</td>
+            <td>{{this.price}}</td>
+            <td>
+                <button href="/orders/delete/{{this._id}}" class="btn btn-danger btn-sm">Delete</button>
+            </td>
+            <td>
+                <button href="/orders/edit/{{this._id}}" class="btn btn-warning btn-sm">Edit</button>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>

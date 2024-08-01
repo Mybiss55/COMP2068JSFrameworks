@@ -6,7 +6,7 @@ var logger = require('morgan');
 // Router objects
 var indexRouter = require('./routes/index');
 // var usersRouter = require('./routes/users');
-var usersRouter = require('./routes/users');
+var ordersRouter = require('./routes/orders');
 // Database connection
 var mongoose = require('mongoose');
 var globals = require('./configs/globals'); // Global configuration object
@@ -27,7 +27,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // route middleware
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/orders', ordersRouter);
 
 // Database connection
 // Connect to MongoDB

@@ -1,11 +1,18 @@
 var mongoose = require('mongoose');
 // Define the schema
 const dataSchemaObj = {
-    name: String,
-    description: String,
-    price: Number,
-    quantity: Number,
-    created: Date
+    name: {
+        type: String,
+        required: true,
+    },
+    ingredients: {
+        type: Array,
+        required: true,
+    },
+    price: {
+        type: Number,
+        required: true,
+    },
 };
 // Create the schema
 const dataSchema = new mongoose.Schema(dataSchemaObj);

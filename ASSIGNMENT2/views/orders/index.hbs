@@ -1,0 +1,30 @@
+<h1>{{title}}</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>totalPrice</th>
+            <th>Items</th>
+            <th>created</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each order}}
+        <tr>
+            <td>{{this.name}}</td>
+            <td>{{this.items}}</td>
+            <td>{{this.created}}</td>
+            <td>{{this.status}}</td>
+            <td>{{this.totalPrice}}</td>
+            <td>
+                {{! Use this._id to get the id of the current project }}
+                <a href="/orders/delete/{{this._id}}" class="btn btn-danger btn-sm" onclick="return deleteConfirmation()">Delete</a>
+
+            </td>
+            <td>
+                <a href="/orders/edit/{{this._id}}" class="btn btn-warning btn-sm">Edit</a>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
