@@ -14,12 +14,14 @@
             <td>{{this.name}}</td>
             <td>{{this.ingredients}}</td>
             <td>{{this.price}}</td>
+            {{#if ../user}}
             <td>
                     <a href="/orders/deleteItem/{{this._id}}" class="btn btn-danger btn-sm" onclick="return deleteConfirmation()">Delete</a>
             </td>
             <td>
                 <a href="/orders/editItem/{{this._id}}" class="btn btn-warning btn-sm">Edit</a>
             </td>
+            {{/if}}
         </tr>
         {{/each}}
     </tbody>

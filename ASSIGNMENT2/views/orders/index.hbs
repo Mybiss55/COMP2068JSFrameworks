@@ -17,15 +17,15 @@
                 <td>{{this.totalPrice}}</td>
                 <td>{{this.items}}</td>
                 <td>{{this.status}}</td>
-
+                {{#if ../user}}
                 <td>
                     {{! Use this._id to get the id of the current order }}
                     <a href="/orders/delete/{{this._id}}" class="btn btn-danger btn-sm" onclick="return deleteConfirmation()">Delete</a>
-
                 </td>
                 <td>
                     <a href="/orders/edit/{{this._id}}" class="btn btn-warning btn-sm">Edit</a>
                 </td>
+                {{/if}}
             </tr>
             {{/each}}
         </tbody>

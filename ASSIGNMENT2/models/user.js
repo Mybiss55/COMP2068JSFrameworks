@@ -9,7 +9,7 @@ const dataSchemaObj = {
     },
     password: { // Never store passwords in plain text
         type: String,
-        required: true,
+        required: false, // To avoid issues when creating a new user, hash it elsewhere
     },
 };
 // Create the schema

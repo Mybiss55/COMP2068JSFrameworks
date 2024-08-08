@@ -11,15 +11,23 @@
   <div class="jumbotron" id="nav-header">
     <nav>
       <a href="/" class="btn btn-success">Home</a>
-      <a href="/orders/add" class="btn btn-primary">Add Order</a>
       <a href="/orders" class="btn btn-info">Order</a>
-      <a href="/orders/addItems" class="btn btn-success">Add Item</a>
       <a href="/orders/items" class="btn btn-warning">Item</a>
+      {{#if user}}
+      <a href="/orders/add" class="btn btn-primary">Add Order</a>
+      <a href="/orders/addItems" class="btn btn-success">Add Item</a>
+      {{/if}}
     </nav>
-    <div>
-        <a class="btn btn-danger">Sign Up</a>
-        <a class="btn btn-secondary">Login</a>
-    </div>
+    {{!-- Login / Register Options --}}
+    <nav>
+      {{#if user}}
+        <p class="m-0">Welcome, {{user.username}}</p>
+        <a href="/logout" class="btn btn-danger">Logout</a>
+      {{else}}
+        <a href="/login" class="btn btn-info">Login</a>
+        <a href="/register" class="btn btn-warning">Register</a>
+      {{/if}}
+    </nav>
   </div>
   <div>
     {{{body}}}
