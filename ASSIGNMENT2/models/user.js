@@ -10,6 +10,9 @@ const dataSchemaObj = {
     password: { // Never store passwords in plain text
         type: String,
         required: false, // To avoid issues when creating a new user, hash it elsewhere
+        oauthId: { type: String, required: false },
+        oauthProvider: { type: String, required: false },
+        created: { type: Date, default: Date.now },
     },
 };
 // Create the schema

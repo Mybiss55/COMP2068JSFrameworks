@@ -15,6 +15,7 @@ var hbs = require('hbs');
 // Import Passport Modules
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
+var GitHubStrategy = require('passport-github2').Strategy;
 var session = require('express-session');
 var User = require('./models/user');
 // Connect to MongoDB
@@ -41,6 +42,29 @@ app.use(passport.initialize());
 app.use(passport.session());
 // Initalize passport strategy
 passport.use(User.createStrategy()); // Create a new instance of the LocalStrategy
+// Configure github strategy
+passport.use(new GitHubStrategy({
+  clientID: globals.ConnectionString.github.clientID,
+  clientSecret: globals.ConnectionString.github.clientSecret,
+  callbackURL: globals.ConnectionString.github.callbackUrl,
+},
+async (accessToken, refreshToken, profile, done) => {
+  const user = await User.findOne({ oauthId: profile.id });
+  if(user) {
+    return done(null, user);
+  }
+  else {
+    const newUser = new User({
+      oauthId: profile.id,
+      oauthProvider: 'GitHub',
+      username: profile.username,
+      created: Date.now(),
+    });
+    const savedUser = await newUser.save();
+    return done(null, savedUser);
+  }
+}
+));
 // Configure Passport to serialize and deserialize user data
 passport.serializeUser(User.serializeUser()); // Serialize the user data
 passport.deserializeUser(User.deserializeUser()); // Deserialize the user data
