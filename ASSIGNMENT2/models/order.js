@@ -5,8 +5,9 @@ const dataSchemaObj = {
         type: String,
         required: true,
     },
+    // Make a list if you can
     items: {
-        type: Array,
+        type: String,
         required: true,
     },
     status: {
@@ -16,6 +17,7 @@ const dataSchemaObj = {
     // Calculate the total price automatically
     totalPrice: {
         type: Number,
+        required: true,
     },
 };
 // Create the schema

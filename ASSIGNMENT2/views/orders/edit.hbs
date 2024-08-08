@@ -1,0 +1,20 @@
+<h1>{{ title }}</h1>
+<form method="post">
+    <fieldset>
+        <label for="">Name:</label>
+        <input type="text" name="name" placeholder="Name" id="name" required value="{{order.name}}">
+    </fieldset>
+    <fieldset>
+        <label for="">Item: </label>
+        <input type="text" name="items" id="items" placeholder="Items" value="{{order.items}}">
+    </fieldset>
+    <fieldset>
+        <label for="">Status:</label>
+        <select name="status" id="Status">
+            {{ createOptionElement "TO DO" order.status}}
+            {{ createOptionElement "In Progress" order.status}}
+            {{ createOptionElement "Completed" order.status}}
+        </select>
+    </fieldset>
+    <button class="btn btn-primary">Save</button>
+</form>

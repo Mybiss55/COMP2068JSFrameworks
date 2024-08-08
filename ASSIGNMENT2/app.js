@@ -44,6 +44,20 @@ app.use(function(req, res, next) {
   next(createError(404));
 });
 
+// Helpers
+// Compares two values, if they are equal, it returns a selected value
+hbs.registerHelper('createOptionElement', (value1, value2) => {
+  console.log(`value1: ${value1}, value2: ${value2}`);
+  var selectedProperty = '';
+  if (value1 == value2.toString()) {
+    selectedProperty = 'selected';
+  }
+  // Return html option selected property
+  return new hbs.SafeString(
+    // They must be backticks, not single quotes
+    `<option ${selectedProperty}> ${value1} </option>`
+  );
+});
 // error handler
 app.use(function(err, req, res, next) {
   // set locals, only providing error in development

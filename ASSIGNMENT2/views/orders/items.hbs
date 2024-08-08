@@ -15,10 +15,10 @@
             <td>{{this.ingredients}}</td>
             <td>{{this.price}}</td>
             <td>
-                <button href="/orders/delete/{{this._id}}" class="btn btn-danger btn-sm">Delete</button>
+                    <a href="/orders/deleteItem/{{this._id}}" class="btn btn-danger btn-sm" onclick="return deleteConfirmation()">Delete</a>
             </td>
             <td>
-                <button href="/orders/edit/{{this._id}}" class="btn btn-warning btn-sm">Edit</button>
+                <a href="/orders/editItem/{{this._id}}" class="btn btn-warning btn-sm">Edit</a>
             </td>
         </tr>
         {{/each}}

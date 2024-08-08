@@ -1,8 +1,73 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+:root {
+  --cool-blue: #3b6bcb;
 }
-
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background: #ff9e9e;
+}
 a {
   color: #00B7FF;
+}
+#nav-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1vh;
+  margin: 0;
+  padding-bottom: 2vh;
+  margin-bottom: 2vh;
+  border-bottom: black 1px solid;
+}
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 5vh;
+}
+header p {
+  font-size: 1.5em;
+  margin: 0;
+}
+#opener {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 0;
+}
+#hot-food {
+  padding: 5vh;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.card{
+  border: 0;
+}
+#search-button {
+  margin-top: 10px;
+  border-radius: 5px;
+}
+#search {
+  width: 25%;
+  height: 30px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 10px;
+}
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1vh;
+  margin: 0;
+  padding-top: 2vh;
+  margin-top: 2vh;
+  border-top: black 1px solid;
+}
+.footer p {
+  margin-right: 10px;
 }
